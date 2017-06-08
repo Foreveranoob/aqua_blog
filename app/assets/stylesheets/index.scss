@@ -72,16 +72,23 @@ h3{
   background-position: center !important;
   background-size: cover !important;
   color: white;
-
-
-
-
-
-}
-
-#featured-blog{
   background-image: url('featuredblogimg.jpg');
+
 }
+
+.author-pic {
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: cover !important;
+    color: white;
+    background-image: url('authorpic.jpg');
+  }
+
+// #featured-blog{
+//   background-image: url('featuredblogimg.jpg');
+// }
 
 #blog1 {
   background-image: url('blog1img.jpg');
