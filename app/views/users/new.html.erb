@@ -1,33 +1,52 @@
-<h1>Sign Up</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4 col-sm-4"></div>
+    <div class="col-md-4 col-sm-4 pull-right"></div>
+    <div class="col-md-4 col-sm-4">
 
-<% if @user.errors.any? %>
-  <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+      <h1>Sign Up</h1>
 
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+      <% if @user.errors.any? %>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
+      <%= form_for @user do |f| %>
+        <div class="form-group">
+          <%= f.label :first_name, class: 'col-2 control-label' %>:
+          <div class="col-10">
+          <%= f.text_field :first_name, class:'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :last_name, class: 'col-2 control-label' %>:
+          <div class="col-10">
+          <%= f.text_field :last_name, class:'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, class: 'col-2 control-label' %>:
+          <div class="col-10">
+          <%= f.email_field :email, class:'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password, class: 'col-2 control-label' %>:
+          <div class="col-10">
+          <%= f.password_field :password, class:'form-control' %>
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :password_confirmation, class: 'col-2 control-label' %>:
+          <div class="col-10">
+          <%= f.password_field :password_confirmation, class:'form-control' %>
+        </div>
+        </div>
+        <%= f.submit %>
+      <% end %>
+    </div>
   </div>
-  <div>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-  </div>
-  <div>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <%= f.submit %>
-<% end %>
+</div>

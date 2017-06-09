@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :posts, dependent: :nullify
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -11,11 +12,11 @@ class User < ApplicationRecord
 
   before_validation :downcase_email
 
+
   def full_name
     "#{first_name} #{last_name}"
   end
 
-  has_many :posts, dependent: :nullify
 
   private
 

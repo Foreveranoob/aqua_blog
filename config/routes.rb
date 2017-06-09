@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/', to: 'welcome#index', as: 'home'
+  get '/', to: 'posts#index', as: 'home'
 
   resources :posts do
     resources :comments, only: [:create, :destroy]
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  root "posts#index"
+  # root "posts#index"
 
   resources :sessions, only: [:new, :create]do
     delete :destroy, on: :collection
