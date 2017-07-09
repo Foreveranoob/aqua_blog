@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
-  # root "posts#index"
+   root "posts#index"
 
   resources :sessions, only: [:new, :create]do
     delete :destroy, on: :collection

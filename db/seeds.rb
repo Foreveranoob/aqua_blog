@@ -30,11 +30,12 @@ end
 
 
 
+users = User.all
 100.times do
-  user = User.all.sample
   Post.create title: Faker::Hacker.say_something_smart,
   body:  Faker::Hipster.paragraph,
-  category: categories.sample
+  category: categories.sample,
+  user: users.sample
 end
 
 posts = Post.all

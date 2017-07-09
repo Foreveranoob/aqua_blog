@@ -28,21 +28,23 @@
 
 
     <div class="container-fluid">
-      <div class="row">
-      <% @posts.each do |post| %>
-        <div class="container-fluid col-md-4">
-          <div class="blog-img " id="blog1">
+      <% @posts.each_slice(3) do |group| %>
+        <div class="row">
+          <% group.each do |post| %>
+            <div class="col-md-4">
+            <div class="blog-img " id="blog5"></div>
+            <a href"#"><h3><i class="fa fa-heart-o" aria-hidden="true"></i></h3></a>
+              <h3>456</h3>
+              <a href"#"><h3><i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i></h3></a>
+              <h1><%= link_to post.title, post_path(post) %></h1>
+              <h5><a href="#"> <%= post.user.full_name %></a></h5>
+              <h6>Post Date</h6>
+            </div>
+          <% end %>
         </div>
-          <a href"#"><h3><i class="fa fa-heart-o" aria-hidden="true"></i></h3></a>
-          <h3>456</h3>
-          <a href"#"><h3><i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i></h3></a>
-          <h1><%= link_to post.title, post_path(post) %></h1>
-          <h5><a href="#"><%=  %></a></h5>
-          <h6>Post Date</h6>
-      </div>
+      <% end %>
     </div>
   </div>
-  <% end %>
 
   <div class="container-fluid" id="more-articles">
     <h1><a href="#">More Articles</a></h2>

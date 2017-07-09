@@ -2,12 +2,26 @@
 //   border: thin red solid
 // }*/
 
-@media (max-width: 800px)
-{
+@media (max-width: 800px){
 #hide-fs{
-
   display: none;
+  }
 }
+
+
+.col-form{
+  width: 100%;
+}
+
+.flex-end{
+  display: flex;
+  justify-content:flex-end;
+  align-items: baseline;
+}
+
+.just-flex{
+  display: flex;
+  justify-content: space-between;
 }
 
 
