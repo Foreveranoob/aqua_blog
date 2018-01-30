@@ -1,6 +1,11 @@
 class User < ApplicationRecord
+
+  mount_uploader :image, ImageUploader
+
   has_secure_password
+
   has_many :posts, dependent: :nullify
+  has_many :comments, dependent: :nullify
 
   validates :first_name, presence: true
   validates :last_name, presence: true

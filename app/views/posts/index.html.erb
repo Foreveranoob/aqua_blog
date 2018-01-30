@@ -1,62 +1,69 @@
 
-  <div class="container-fluid" id= "hide-fs">
-    <div id="featured-section">
-        <div class="container-fluid" id="featured">
-        <div class="featured-blog" id="featured-blog"></div>
-        <a href"#"><h3><i class="fa fa-heart-o" aria-hidden="true"></i></h3></a>
-        <h3>99</h3>
-        <a href"#"><h3><i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i></h3></a>
-        <h1>Post Title Blog 1</h1>
-        <h5><a href="#">Post Author Name</a></h5>
-        <h6>Post Date</h6>
+<div class="container-fluid" id= "hide-fs">
+  <div id="featured-section">
+    <div class="container-fluid" id="featured">
+      <div class="featured-blog" id="featured-blog"></div>
+      <div class="just-flex">
+        <div class="">
+      <a href"#"><i class="fa fa-heart-o font-20" aria-hidden="true"></i></a>
+      <p class="font-20" style="display:inline">899</p>
+    </div>
+      <a href"#"><i class="fa fa-bookmark-o font-20" aria-hidden="true"></i></a>
+    </div>
+    <p class="font-20">Featured Blog Example</p>
+    <div class=" just-flex">
+      <p><a href="#">Author Name</a></p>
+      <p>Post Date</p>
+    </div>
+    </div>
+    <div class=""id="most-liked">
+      <ul>
+        <li><p>Most Liked</p></li>
+        <li><a href="#">The Worst Advise We've Ever Heard</a></li>
+        <li><a href="#">Think You're Cut Out For Doing Design?</a></li>
+        <li><a href="#">How To Solve The Biggest Problems With</a></li>
+        <li><a href="#">10 Things Your Competitors Can Teach</a></li>
+        <li><a href="#">14 Common Misconceptions About</a></li>
+        <li><a href="#">The History Of Design</a></li>
+        <li><a href="#">10 Signs You Should Invest In Tech</a></li>
+        <li><a href="#">5 Tools Everyone In the Design Industry</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+
+<% @posts.each do |post| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <%= image_tag post.post_image_url.to_s, class:"blog-img" %>
+        <%= link_to post.title, post_path(post), class:"ellipsis-1 blog-title", style:"padding-bottom:0px;" %>
+        <div class="just-flex">
+          <div class="">
+        <a href"#"><i class="fa fa-heart-o font-20" aria-hidden="true"></i></a>
+        <p class="font-20" style="display:inline"><%= post.post_rating %></p>
       </div>
-        <div class=""id="most-liked">
-          <ul>
-            <li><h1>Most Liked</h1></li>
-            <li><a href="#">The Worst Advise We've Ever Heard</a></li>
-            <li><a href="#">Think You're Cut Out For Doing Design?</a></li>
-            <li><a href="#">How To Solve The Biggest Problems With</a></li>
-            <li><a href="#">10 Things Your Competitors Can Teach</a></li>
-            <li><a href="#">14 Common Misconceptions About</a></li>
-            <li><a href="#">The History Of Design</a></li>
-            <li><a href="#">10 Signs You Should Invest In Tech</a></li>
-            <li><a href="#">5 Tools Everyone In the Design Industry</a></li>
-        </ul>
+        <a href"#"><i class="fa fa-bookmark-o font-20" aria-hidden="true"></i></a>
+      </div>
+        <div class="just-flex">
+         <%= link_to post.user.full_name %>
+        <%= post.created_at.strftime("%B %d %Y")  %>
+      </div>
+      <br>
     </div>
-  </div>
- </div>
+
+  <% end %>
+</div>
+</div>
 
 
-    <div class="container-fluid">
-      <% @posts.each_slice(3) do |group| %>
-        <div class="row">
-          <% group.each do |post| %>
-            <div class="col-md-4">
-            <div class="blog-img " id="blog5"></div>
-            <a href"#"><h3><i class="fa fa-heart-o" aria-hidden="true"></i></h3></a>
-              <h3>456</h3>
-              <a href"#"><h3><i class="fa fa-bookmark-o pull-right" aria-hidden="true"></i></h3></a>
-              <h1><%= link_to post.title, post_path(post) %></h1>
-              <h5><a href="#"> <%= post.user.full_name %></a></h5>
-              <h6>Post Date</h6>
-            </div>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <div class="col-xs-12" id="footer">
 
-  <div class="container-fluid" id="more-articles">
-    <h1><a href="#">More Articles</a></h2>
-  </div>
-
-  <div class="container-fluid" id="footer">
-      <div class=""></div>
-      <h2><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></h2>
-      <h2><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></h2>
-      <h2><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></h2>
-      <h2><a href="#"><i class="fa fa-medium" aria-hidden="true"></i></a></h2>
-      <h2><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></h2>
-
-    </div>
+    <h2><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></h2>
+    <h2><a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></h2>
+    <h2><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></h2>
+    <h2><a href="#"><i class="fa fa-medium" aria-hidden="true"></i></a></h2>
+    <h2><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></h2>
   </div>
