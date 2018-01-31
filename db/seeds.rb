@@ -22,7 +22,7 @@ categories = Category.create([
 ])
 
 10.times do
-    blog_user_image_file  = File.open(File.join(Rails.root,"app/assets/images/goofy_avatar#{rand(10)}.jpg"))
+    blog_user_image_file  = File.open(File.join(Rails.root,"public/goofy_avatar#{rand(10)}.jpg"))
 
  User.create(
    first_name: Faker::Zelda.character,
@@ -37,7 +37,7 @@ end
 users = User.all
 
 20.times do
-  blog_post_image_file  = File.open(File.join(Rails.root,"app/assets/images/blog#{rand(11)}img.jpg"))
+  blog_post_image_file  = File.open(File.join(Rails.root,"public/blog#{rand(11)}img.jpg"))
   Post.create(
   title: Faker::ChuckNorris.fact,
   body:  Faker::RickAndMorty.quote,
