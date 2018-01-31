@@ -32,7 +32,7 @@ gem 'carrierwave', '~> 1.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'faker', github: 'stympy/faker'
 
-
+gem 'rails_12factor', group: :production
 
 
 # Use Capistrano for deployment
