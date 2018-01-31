@@ -21,7 +21,7 @@ categories = Category.create([
   {name: 'Plants'}
 ])
 
-30.times do
+10.times do
     blog_user_image_file  = File.open(File.join(Rails.root,"app/assets/images/goofy_avatar#{rand(10)}.jpg"))
 
  User.create(
@@ -36,7 +36,7 @@ end
 
 users = User.all
 
-100.times do
+20.times do
   blog_post_image_file  = File.open(File.join(Rails.root,"app/assets/images/blog#{rand(11)}img.jpg"))
   Post.create(
   title: Faker::ChuckNorris.fact,
