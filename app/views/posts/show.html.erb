@@ -1,6 +1,6 @@
 
 <div class="container-fluid">
-  <%= image_tag "#{@post.post_image_url}", class:"blog-img-lg" %>
+  <%= image_tag "#{@post.post_image_url.to_s}", class:"blog-img-lg" %>
   <div class="pull-right">
     <a href"#">
       <h3>
@@ -44,7 +44,7 @@
 
         <div class="row">
           <div class="col-xs-3 col-sm-3">
-            <%= image_tag "#{@post.user.image_url}", class:"img-responsive comment-avatar" %>
+            <%= image_tag "#{@post.user.image_url.to_s}", class:"img-responsive comment-avatar" %>
           </div>
           <div class="col-xs-8 col-sm-8">
             <h5><a href="#"><%= @post.user.full_name %></a></h5>
@@ -94,7 +94,7 @@
                 <h2>Comments</h2>
                 <% @post.comments.each do |comment| %>
                 <div class="col-xs-3">
-                  <%= image_tag "#{comment.user.image_url}", class:"img-responsive comment-avatar" %>
+                  <%= image_tag "#{comment.user.image_url.to_s}", class:"img-responsive comment-avatar" %>
                 </div>
                 <div class="col-xs-9">
                   <p><%= comment.body %></p>
